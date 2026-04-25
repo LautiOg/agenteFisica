@@ -1,0 +1,19 @@
+# Carpetas de dependencias
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Secretos (¡NO SUBIR!)
+.env
+.flaskenv
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Se permite subir chroma_db y docs para que el servidor gratuito
+# no tenga que re-ingestar todo en cada reinicio.
+# Si prefieres que sea 100% dinámico, descomenta las líneas de abajo:
+# chroma_db/
+# docs/*.pdf

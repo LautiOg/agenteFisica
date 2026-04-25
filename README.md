@@ -1,53 +1,24 @@
-# Agente de Física — RAG con Gemini
+# ⚛️ Agente Física Pro - Despliegue
 
-Asistente de IA que responde preguntas **solo** con el material de PDFs que vos copiás al proyecto.
+Este proyecto está listo para ser hosteado en **Render (Backend)** y **Vercel (Frontend)**.
 
-**Stack:** React (Vite) · FastAPI · LangChain · ChromaDB · Google Gemini
+## 🚀 Instrucciones de Despliegue
 
----
+### 1. Backend (en Render.com)
+1. Crea un **"Web Service"** apuntando a tu repo.
+2. Root Directory: `backend-python`
+3. Build Command: `pip install -r requirements.txt`
+4. Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+5. **Environment Variables:**
+   - `GOOGLE_API_KEY`: Tu llave (o varias separadas por coma).
+   - `PYTHON_VERSION`: `3.10.0` (o superior).
 
-## 🚀 Setup (una sola vez)
-
-### 1. Configurar la API Key de Gemini
-Editá `backend-python/.env`:
-```
-GOOGLE_API_KEY="tu-clave-de-ai.google.dev"
-```
-Conseguí tu clave gratis en: https://aistudio.google.com/app/apikey
-
-### 2. Copiar los PDFs al proyecto
-Poné tus archivos PDF de física en:
-```
-AgenteFisica/
-└── backend-python/
-    └── docs/        ← Copiá acá tus PDFs
-```
-**No hace falta volver a hacerlo.** Los PDFs se indexan una sola vez y se recuerdan.
+### 2. Frontend (en Vercel.com)
+1. Crea un nuevo proyecto apuntando a tu repo.
+2. Framework Preset: `Vite`.
+3. Root Directory: `frontend-react`
+4. **Environment Variables:**
+   - `VITE_API_URL`: La URL que te dio Render (ej: `https://tu-backend.onrender.com`).
 
 ---
-
-## ▶️ Uso diario
-
-### Levantar el Backend
-Desde la carpeta `AgenteFisica/`:
-```powershell
-.\venv\Scripts\python.exe -m uvicorn backend-python.main:app --reload --port 8000
-```
-> Al arrancar, el servidor detecta automáticamente si hay PDFs nuevos y los indexa.
-
-### Levantar el Frontend
-En otra terminal, desde `AgenteFisica/frontend-react/`:
-```powershell
-npm run dev
-```
-
-Abrí **http://localhost:5173** y empezá a preguntar.
-
----
-
-## ➕ Agregar nuevos PDFs sin reiniciar
-
-1. Copiá el PDF nuevo a `backend-python/docs/`
-2. En la UI, hacé clic en **"🔄 Indexar nuevo(s)"**  
-   (el botón se pone naranja automáticamente cuando detecta archivos sin indexar)
-3. ¡Listo! El agente ya tiene acceso al nuevo material.
+Desarrollado con ❤️ para Estudiantes de Física.
