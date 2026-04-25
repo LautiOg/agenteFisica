@@ -1,0 +1,2 @@
+Acá van los PDFs del material de la cátedra.
+Copiá los archivos .pdf en esta carpeta y luego ejecutá: python ingest.py
